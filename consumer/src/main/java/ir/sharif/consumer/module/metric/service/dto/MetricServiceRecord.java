@@ -1,5 +1,18 @@
 package ir.sharif.consumer.module.metric.service.dto;
 
-public record MetricServiceRecord(String serverId, long waitingTime, long responseTime, long serviceTime, long busyDuration){
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class MetricServiceRecord{
+    String serverId;
+    long waitingTime;
+    long responseTime;
+    long serviceTime;
+    long busyDuration;
 }
