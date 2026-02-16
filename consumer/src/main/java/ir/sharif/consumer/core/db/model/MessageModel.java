@@ -1,4 +1,4 @@
-package ir.sharif.consumer.core.model;
+package ir.sharif.consumer.core.db.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

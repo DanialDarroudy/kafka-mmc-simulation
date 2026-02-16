@@ -1,6 +1,6 @@
-package ir.sharif.consumer.module.message.store.abstraction;
+package ir.sharif.consumer.core.db.repository;
 
-import ir.sharif.consumer.core.model.MessageModel;
+import ir.sharif.consumer.core.db.model.MessageModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface IMessageModelRepository extends JpaRepository<MessageModel, String> {

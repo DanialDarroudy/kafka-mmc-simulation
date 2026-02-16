@@ -1,9 +1,9 @@
 package ir.sharif.consumer.module.message.process.business;
 
-import ir.sharif.consumer.core.model.MessageModel;
+import ir.sharif.consumer.core.db.model.MessageModel;
 import ir.sharif.consumer.module.message.process.abstraction.IMessageProcessor;
 import ir.sharif.consumer.module.message.process.dto.ProcessMessageRequestDto;
-import ir.sharif.consumer.module.message.store.abstraction.IMessageModelRepository;
+import ir.sharif.consumer.core.db.repository.IMessageModelRepository;
 import ir.sharif.consumer.module.metric.service.abstraction.IMetricService;
 import ir.sharif.consumer.module.metric.service.dto.MetricServiceRecord;
 import lombok.RequiredArgsConstructor;
