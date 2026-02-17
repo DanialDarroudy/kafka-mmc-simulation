@@ -1,7 +1,7 @@
 package ir.sharif.consumer.module.metric.service.abstraction;
 
-import ir.sharif.consumer.module.metric.service.dto.MetricServiceRecord;
+import ir.sharif.consumer.module.metric.service.dto.MetricServiceDto;
 
 public interface IMetricService {
-    void record(MetricServiceRecord record);
+    void record(MetricServiceDto dto);
 }

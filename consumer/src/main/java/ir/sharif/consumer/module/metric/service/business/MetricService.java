@@ -4,7 +4,7 @@ import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.DistributionSummary;
 import io.micrometer.core.instrument.MeterRegistry;
 import ir.sharif.consumer.module.metric.service.abstraction.IMetricService;
-import ir.sharif.consumer.module.metric.service.dto.MetricServiceRecord;
+import ir.sharif.consumer.module.metric.service.dto.MetricServiceDto;
 import org.springframework.stereotype.Component;
 
 import java.util.concurrent.ConcurrentHashMap;
@@ -46,18 +46,18 @@ public class MetricService implements IMetricService {
     }
 
     @Override
-    public void record(MetricServiceRecord record) {
+    public void record(MetricServiceDto dto) {
         completedMessages.increment();
 
-        waitingTimeSummary.record(record.waitingTime());
-        responseTimeSummary.record(record.responseTime());
-        serviceTimeSummary.record(record.serviceTime());
+        waitingTimeSummary.record(dto.getWaitingTime());
+        responseTimeSummary.record(dto.getResponseTime());
+        serviceTimeSummary.record(dto.getServiceTime());
 
-        serverBusyTimeCounters.computeIfAbsent(record.serverId(), id ->
+        serverBusyTimeCounters.computeIfAbsent(dto.getServerId(), id ->
                 Counter.builder("server_busy_time_total_ms")
                         .description("Total busy time of server in milliseconds")
                         .tag("server", id)
                         .baseUnit("milliseconds")
-                        .register(registry)).increment(record.busyDuration());
+                        .register(registry)).increment(dto.getBusyDuration());
     }
 }

@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class MetricServiceRecord{
+public class MetricServiceDto {
     String serverId;
     long waitingTime;
     long responseTime;

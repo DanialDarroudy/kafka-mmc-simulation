@@ -5,7 +5,7 @@ import ir.sharif.consumer.module.message.process.abstraction.IMessageProcessor;
 import ir.sharif.consumer.module.message.process.dto.ProcessMessageRequestDto;
 import ir.sharif.consumer.core.db.repository.IMessageModelRepository;
 import ir.sharif.consumer.module.metric.service.abstraction.IMetricService;
-import ir.sharif.consumer.module.metric.service.dto.MetricServiceRecord;
+import ir.sharif.consumer.module.metric.service.dto.MetricServiceDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -37,14 +37,14 @@ public class MessageProcessor implements IMessageProcessor {
         var responseTime = finishTime - message.getArrivalTime();
         var busyDuration = finishTime - busyStart;
 
-        var metricRecord = MetricServiceRecord.builder()
+        var metricDto = MetricServiceDto.builder()
                 .serverId(serverId)
                 .waitingTime(waitingTime)
                 .serviceTime(serviceTime)
                 .busyDuration(busyDuration)
                 .responseTime(responseTime)
                 .build();
-        metricService.record(metricRecord);
+        metricService.record(metricDto);
 
         var messageModel = MessageModel.builder()
                 .jobId(message.getId().toString())
