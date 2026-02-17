@@ -48,6 +48,7 @@ public class MessageProcessor implements IMessageProcessor {
 
         var messageModel = MessageModel.builder()
                 .jobId(message.getId().toString())
+                .payload(message.getPayload())
                 .arrivalTime(message.getArrivalTime())
                 .dequeueTime(dequeueTime)
                 .finishTime(finishTime)

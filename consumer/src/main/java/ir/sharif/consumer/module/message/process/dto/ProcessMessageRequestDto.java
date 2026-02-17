@@ -9,6 +9,6 @@ import java.util.UUID;
 @AllArgsConstructor
 public class ProcessMessageRequestDto {
     private UUID id;
-    private byte[] payload;
+    private String payload;
     private long arrivalTime;
 }

@@ -17,6 +17,8 @@ public class MessageModel {
     @Id
     private String jobId;
 
+    private String payload;
+
     private long arrivalTime;
 
     private long dequeueTime;

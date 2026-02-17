@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class SendMessageRequestDto {
-    private byte[] payload;
+    private String payload;
 }
