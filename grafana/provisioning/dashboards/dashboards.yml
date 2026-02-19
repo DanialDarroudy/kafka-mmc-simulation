@@ -1,9 +1,12 @@
+apiVersion: 1
+
 providers:
-  - name: 'mmc-simulation'
+  - name: 'mmc-dashboard-provider'
     orgId: 1
     folder: ''
     type: file
-    disableDeletion: true
-    editable: false
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
     options:
       path: /var/lib/grafana/dashboards

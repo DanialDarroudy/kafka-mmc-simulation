@@ -116,7 +116,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./grafana/provisioning:/etc/grafana/provisioning
-      - ./grafana/dashboards:/etc/grafana/dashboards
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
     networks:
       - mmc-network
 
